@@ -11,7 +11,7 @@ router.post('/removeTransaction/:id/:transaction_id', transactionController.remo
 
 router.post('/getAllTransactionOfUser', UserController.getAllTransactionOfUser)
 router.post('/createUser', UserController.createUser)
-router.post('/chekIfThereIsUser', UserController.chekIfThereIsUser)
+
 
 
 

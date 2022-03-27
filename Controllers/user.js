@@ -18,26 +18,6 @@ const createUser = async (req, res) => {
             console.log("err:-----------",err)
              res.status(400).send(err) });
 }
-// //userName & password בדיקה אם קיים היוזר 
-// const chekIfThereIsUser = async (req, res) => {
-//     try {
-//         console.log("chekIfThereIsUser")
-//         const { user } = req.body
-      
-//          User.findOne({userName:user.userName,password:user.password})
-//         .then((user) => {
-//             if(!user)
-//             user="not" 
-//             console.log("user: ",user)
-//             res.status(200).json({
-//                 message: 'succ',
-//                 user: user
-//             })
-//         })
-//     } catch (err) {
-//         res.status(400).send(err.message)
-//     }
-// }
 
 
 //חיפוש אם יוזר קיים - לפי שם משתמש ןסיסמא
@@ -60,58 +40,8 @@ const getAllTransactionOfUser = (req, res) => {
     }
 }
 
-
-
-// const getAllUsers = (req, res) => {
-//         try {
-//             User.find().then((users) => {
-//                 res.status(200).json({
-//                     message: 'succ',
-//                     users: users
-//                 })
-//             })
-//         } catch (err) {
-//             res.status(400).send(err.message)
-//         }
-//     }
-
-// const removeUser = async (req, res) => {
-//     try {
-
-
-//           User.findOneAndDelete({ _id: req.params.id }).then((user) => {
-//             res.status(200).json({
-//                 message: 'succ',
-//                 user: user
-//             })
-//         })
-//     } catch (er) {
-//         res.status(400).send(err.message)
-//     }
-// }
-
-// const updateUser = async (req, res) => {
-//     try {
-//         console.log("updateUser")
-//         const {user} =req.body
-//        console.log("user: ",user)
-//          User.updateOne({_id:user.id}, {$set: user})
-//         .then((user) => {
-//             res.status(200).json({
-//                 message: 'succ',
-//                 user: user
-//             })
-//         })
-//     } catch (err) {
-//         res.status(400).send(err.message)
-//     }
-// }
-
-
-
 module.exports = {
     createUser,
-    // chekIfThereIsUser,
     getAllTransactionOfUser
 
   
