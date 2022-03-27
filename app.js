@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
+//מגדיר את מה להריץ
 const api = require('./api')
 app.use(api);
 app.use('/', api)
@@ -21,7 +22,6 @@ const mongoDB_Url ="mongodb+srv://mirinir:m207464041@cluster0.m51yh.mongodb.net/
 // Connect to the db
 mongoose.connect(mongoDB_Url, function (err, db) {
     if (err) throw err;
-    //Write databse Insert/Update/Query code here..
     console.log("connect db")
 
 });
