@@ -18,29 +18,30 @@ const createUser = async (req, res) => {
             console.log("err:-----------",err)
              res.status(400).send(err) });
 }
-//userName & password בדיקה אם קיים היוזר 
-const chekIfThereIsUser = async (req, res) => {
-    try {
-        console.log("chekIfThereIsUser")
-        const { user } = req.body
+// //userName & password בדיקה אם קיים היוזר 
+// const chekIfThereIsUser = async (req, res) => {
+//     try {
+//         console.log("chekIfThereIsUser")
+//         const { user } = req.body
       
-         User.findOne({userName:user.userName,password:user.password})
-        .then((user) => {
-            if(!user)
-            user="not" 
-            console.log("user: ",user)
-            res.status(200).json({
-                message: 'succ',
-                user: user
-            })
-        })
-    } catch (err) {
-        res.status(400).send(err.message)
-    }
-}
+//          User.findOne({userName:user.userName,password:user.password})
+//         .then((user) => {
+//             if(!user)
+//             user="not" 
+//             console.log("user: ",user)
+//             res.status(200).json({
+//                 message: 'succ',
+//                 user: user
+//             })
+//         })
+//     } catch (err) {
+//         res.status(400).send(err.message)
+//     }
+// }
 
 
-
+//חיפוש אם יוזר קיים - לפי שם משתמש ןסיסמא
+// ואם קיים שולפת את כל נתוני היוזר כולל הנתונים על כל העסקאות שלו  
 const getAllTransactionOfUser = (req, res) => {
     try {
         const {user} = req.body
@@ -110,10 +111,8 @@ const getAllTransactionOfUser = (req, res) => {
 
 module.exports = {
     createUser,
-    chekIfThereIsUser,
+    // chekIfThereIsUser,
     getAllTransactionOfUser
 
-    // getAllUsers,
-    // removeUser,
-    // updateUser
+  
 }

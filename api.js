@@ -5,7 +5,7 @@ const UserController = require('./Controllers/user')
 
 //
 router.post('/createTransactions', transactionController.createTransaction)
-router.post('/removeTransaction/:id', transactionController.removeTransaction)
+router.post('/removeTransaction/:id/:transaction_id', transactionController.removeTransaction)
 
 
 
